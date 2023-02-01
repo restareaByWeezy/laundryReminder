@@ -1,15 +1,20 @@
-import React, { HTMLAttributes } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View, ViewProps } from 'react-native';
 
-interface RowProps extends HTMLAttributes<HTMLDivElement> { }
+interface RowProps extends ViewProps { }
 
 const Col = ({ children, ...props }: RowProps) => {
   return (
-    <div {...props}>
+    <View style={styles.container} {...props}>
       {children}
-    </div>
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+  }
+})
+
 
 
 
